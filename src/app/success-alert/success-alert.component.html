@@ -1,0 +1,28 @@
+<p class="success-alert">This is success Alert</p>
+<hr />
+
+<label for="">Username:</label>
+<input type="text" [(ngModel)]="username" />
+<button
+  class="btn btn-primary"
+  [disabled]="username === ''"
+  (click)="onReset()"
+>
+  Reset Username
+</button>
+<h4>{{ username }}</h4>
+
+<br /><br /><br />
+<hr />
+
+<button class="btn btn-primary" (click)="updateClickCount()">
+  Display Details
+</button>
+<p *ngIf="isDisplay === true">This is a paragraph which is going to be hide.</p>
+<p
+  *ngFor="let num of logArray; let i = index"
+  [ngStyle]="{ backgroundColor: i >= 4 ? 'blue' : 'transparent' }"
+  [ngClass]="{ 'para-color': i >= 4 }"
+>
+  {{ num }}
+</p>
